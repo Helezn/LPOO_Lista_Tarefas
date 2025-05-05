@@ -8,8 +8,6 @@ package modelo;
  *
  * @author vanessalagomachado
  */
-public enum CategoriaCurso {
-    DEV, INFRAESTRUTURA, IA, CIENCIA_DADOS, DBA;
-    
-    
+public enum CategoriaLista {
+    IFSUL, PESSOAL, TRABALHO;
 }

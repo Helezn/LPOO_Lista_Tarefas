@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package visão;
+package visao;
 
 /**
  *
@@ -36,7 +36,7 @@ public class SobreJD extends javax.swing.JDialog {
 
         jLabel1.setText("Sobre o Sistema:");
 
-        jLabel2.setText("Sistema de Cadastro de Cursos");
+        jLabel2.setText("Sistema de Cadastro de Listas");
 
         jLabel3.setText("Desenvolvido na disciplina de LPOO (2025-1)");
 

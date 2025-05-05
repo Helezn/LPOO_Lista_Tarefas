@@ -10,18 +10,18 @@ import java.util.Objects;
  *
  * @author vanessalagomachado
  */
-public class Curso {
-    private String nome;
+public class Lista {
+    private String tarefa; //nome
     private String descricao;
-    private CategoriaCurso categoria;
-    private int CH;
+    private CategoriaLista categoria;
+    private Prioridade prioridade;
 
-    public String getNome() {
-        return nome;
+    public String getTarefa() {
+        return tarefa;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setTarefa(String tarefa) {
+        this.tarefa = tarefa;
     }
 
     public String getDescricao() {
@@ -32,31 +32,27 @@ public class Curso {
         this.descricao = descricao;
     }
 
-    public CategoriaCurso getCategoria() {
+    public CategoriaLista getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(CategoriaCurso categoria) {
+    public void setCategoria(CategoriaLista categoria) {
         this.categoria = categoria;
     }
 
-    public int getCH() {
-        return CH;
+    public Prioridade getPrioridade() {
+        return prioridade;
     }
 
-    public void setCH(int CH) {
-        this.CH = CH;
+    public void setPrioridade(Prioridade prioridade) {
+        this.prioridade = prioridade;
     }
 
-    @Override
-    public String toString() {
-        return nome;
-    }
-
+    
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 43 * hash + Objects.hashCode(this.nome);
+        hash = 43 * hash + Objects.hashCode(this.tarefa);
         hash = 43 * hash + Objects.hashCode(this.categoria);
         return hash;
     }
@@ -72,12 +68,14 @@ public class Curso {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Curso other = (Curso) obj;
-        if (!Objects.equals(this.nome, other.nome)) {
+        final Lista other = (Lista) obj;
+        if (!Objects.equals(this.tarefa, other.tarefa)) {
             return false;
         }
         return this.categoria == other.categoria;
     }
     
-    
+    public String toString() {
+    return "Tarefa: " + tarefa + " | Categoria: " + categoria;
+}
 }

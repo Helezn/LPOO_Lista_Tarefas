@@ -5,18 +5,16 @@
 package controle;
 
 import java.util.List;
-import modelo.Curso;
+import modelo.Lista;
 
 /**
  *
  * @author vanessalagomachado
  */
-public class CursoController {
+public class TarefaController {
     // método para adicionar um item na lista
-    public List<Curso> addCurso(Curso c, List<Curso> listaCursos){
-        listaCursos.add(c);
-        return listaCursos;
+    public List<Lista> addTarefa(Lista t, List<Lista> listaTarefas){
+        listaTarefas.add(t);
+        return listaTarefas;
     }
-    
-    
 }

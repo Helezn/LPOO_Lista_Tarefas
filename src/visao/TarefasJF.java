@@ -2,39 +2,39 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package visão;
+package visao;
 
-import controle.CursoController;
+import controle.TarefaController;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import modelo.Curso;
+import modelo.Lista;
 
 /**
  *
  * @author vanessalagomachado
  */
-public class CursosJF extends javax.swing.JFrame {
+public final class TarefasJF extends javax.swing.JFrame {
 
-    ArrayList<Curso> listaCursos = new ArrayList<>();
+    ArrayList<Lista> listaTarefas = new ArrayList<>();
 
-    public void carregarCursos() {
+    public void carregarListas() {
         DefaultListModel modelo = new DefaultListModel();
         modelo.removeAllElements();
 
-        for (Curso c : listaCursos) {
-            modelo.addElement(c);
+        for (Lista t : listaTarefas) {
+            modelo.addElement(t);
         }
 
-        lstCursos.setModel(modelo);
+        lstTarefas.setModel(modelo);
     }
 
     /**
      * Creates new form CursosJF
      */
-    public CursosJF() {
+    public TarefasJF() {
         initComponents();
-        carregarCursos();
+        carregarListas();
     }
 
     /**
@@ -48,18 +48,20 @@ public class CursosJF extends javax.swing.JFrame {
 
         lblTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        lstCursos = new javax.swing.JList<>();
+        lstTarefas = new javax.swing.JList<>();
         btnAdicionar = new javax.swing.JButton();
         btnRemover = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lblTitulo.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        lblTitulo.setText("Cursos Cadastrados");
+        lblTitulo.setFont(new java.awt.Font("Segoe Script", 0, 18)); // NOI18N
+        lblTitulo.setText("Tarefas Cadastradas");
 
-        jScrollPane1.setViewportView(lstCursos);
+        jScrollPane1.setViewportView(lstTarefas);
 
+        btnAdicionar.setBackground(new java.awt.Color(204, 255, 204));
+        btnAdicionar.setFont(new java.awt.Font("Segoe Script", 0, 12)); // NOI18N
         btnAdicionar.setText("Adicionar");
         btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +69,8 @@ public class CursosJF extends javax.swing.JFrame {
             }
         });
 
+        btnRemover.setBackground(new java.awt.Color(255, 204, 204));
+        btnRemover.setFont(new java.awt.Font("Segoe Script", 0, 12)); // NOI18N
         btnRemover.setText("Remover");
         btnRemover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +78,8 @@ public class CursosJF extends javax.swing.JFrame {
             }
         });
 
+        btnEditar.setBackground(new java.awt.Color(204, 204, 255));
+        btnEditar.setFont(new java.awt.Font("Segoe Script", 0, 12)); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,48 +117,48 @@ public class CursosJF extends javax.swing.JFrame {
                     .addComponent(btnAdicionar)
                     .addComponent(btnRemover)
                     .addComponent(btnEditar))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
-        CadastroCursoJD telaCadastro = new CadastroCursoJD(this, true);
+        CadastroTarefasJD telaCadastro = new CadastroTarefasJD(this, true);
         telaCadastro.setVisible(true);
 
-        Curso cursoNovo = telaCadastro.getCurso();
+        Lista tarefaNova = telaCadastro.getLista();
 
-        CursoController control = new CursoController();
-        listaCursos = (ArrayList<Curso>) control.addCurso(cursoNovo, listaCursos);
-        carregarCursos();
+        TarefaController control = new TarefaController();
+        listaTarefas = (ArrayList<Lista>) control.addTarefa(tarefaNova, listaTarefas);
+       carregarListas();
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
-        Curso cursoSelecionado = lstCursos.getSelectedValue();
-        if (cursoSelecionado != null) {
-            int opRemover = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja remover o curso? " + cursoSelecionado.getNome());
+        Lista tarefaSelecionada = lstTarefas.getSelectedValue();
+        if ( tarefaSelecionada != null) {
+            int opRemover = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja remover a tarefa? " +  tarefaSelecionada.getTarefa());
             if (opRemover == JOptionPane.YES_OPTION) {
-                listaCursos.remove(cursoSelecionado);
-                carregarCursos();
+                listaTarefas.remove(tarefaSelecionada);
+                carregarListas();
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Selecione um curso para remover!!");
+            JOptionPane.showMessageDialog(rootPane, "Selecione uma tarefa para remover!!");
         }
     }//GEN-LAST:event_btnRemoverActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        Curso cursoSelecionado = lstCursos.getSelectedValue();
-        if (cursoSelecionado != null) {
+        Lista tarefaSelecionada = lstTarefas.getSelectedValue();
+        if (tarefaSelecionada != null) {
             
-            CadastroCursoJD telaCadastro = new CadastroCursoJD(this, true);
-            telaCadastro.setCurso(cursoSelecionado);
+            CadastroTarefasJD telaCadastro = new CadastroTarefasJD(this, true);
+            telaCadastro.setLista(tarefaSelecionada);
             
             telaCadastro.setVisible(true);
 
-            carregarCursos();
+            carregarListas();
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Selecione um curso para editar!!");
+            JOptionPane.showMessageDialog(rootPane, "Selecione uma tarefa para editar!!");
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
@@ -173,20 +179,21 @@ public class CursosJF extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CursosJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TarefasJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CursosJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TarefasJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CursosJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TarefasJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CursosJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TarefasJF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CursosJF().setVisible(true);
+                new TarefasJF().setVisible(true);
             }
         });
     }
@@ -197,6 +204,6 @@ public class CursosJF extends javax.swing.JFrame {
     private javax.swing.JButton btnRemover;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JList<Curso> lstCursos;
+    private javax.swing.JList<modelo.Lista> lstTarefas;
     // End of variables declaration//GEN-END:variables
 }

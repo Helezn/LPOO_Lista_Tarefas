@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package visão;
+package visao;
 
 /**
  *
@@ -34,6 +34,7 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jMenu1.setBackground(new java.awt.Color(204, 204, 255));
         jMenu1.setText("Cadastro");
 
         miCurso.setText("Curso");
@@ -81,7 +82,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_miSobreActionPerformed
 
     private void miCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCursoActionPerformed
-        CursosJF telaCursos = new CursosJF();
+        TarefasJF telaCursos = new TarefasJF();
         telaCursos.setVisible(true);
     }//GEN-LAST:event_miCursoActionPerformed
 

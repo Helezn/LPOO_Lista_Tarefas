@@ -28,7 +28,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        miCurso = new javax.swing.JMenuItem();
+        miLista = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         miSobre = new javax.swing.JMenuItem();
 
@@ -37,13 +37,13 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.setBackground(new java.awt.Color(204, 204, 255));
         jMenu1.setText("Cadastro");
 
-        miCurso.setText("Curso");
-        miCurso.addActionListener(new java.awt.event.ActionListener() {
+        miLista.setText("Lista");
+        miLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miCursoActionPerformed(evt);
+                miListaActionPerformed(evt);
             }
         });
-        jMenu1.add(miCurso);
+        jMenu1.add(miLista);
 
         jMenuBar1.add(jMenu1);
 
@@ -81,10 +81,10 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_miSobreActionPerformed
 
-    private void miCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCursoActionPerformed
-        TarefasJF telaCursos = new TarefasJF();
-        telaCursos.setVisible(true);
-    }//GEN-LAST:event_miCursoActionPerformed
+    private void miListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miListaActionPerformed
+        TarefasJF telaListaTarefa = new TarefasJF();
+        telaListaTarefa.setVisible(true);
+    }//GEN-LAST:event_miListaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,7 +125,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem miCurso;
+    private javax.swing.JMenuItem miLista;
     private javax.swing.JMenuItem miSobre;
     // End of variables declaration//GEN-END:variables
 }

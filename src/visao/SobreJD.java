@@ -36,7 +36,7 @@ public class SobreJD extends javax.swing.JDialog {
 
         jLabel1.setText("Sobre o Sistema:");
 
-        jLabel2.setText("Sistema de Cadastro de Listas");
+        jLabel2.setText("Sistema de Cadastro de Lista de Tarefas");
 
         jLabel3.setText("Desenvolvido na disciplina de LPOO (2025-1)");
 

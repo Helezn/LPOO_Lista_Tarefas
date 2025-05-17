@@ -143,7 +143,7 @@ public final class TarefasJF extends javax.swing.JFrame {
                 carregarListas();
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Selecione uma tarefa para remover!!");
+            JOptionPane.showMessageDialog(rootPane, "Selecione uma tarefa para remover!");
         }
     }//GEN-LAST:event_btnRemoverActionPerformed
 
@@ -158,7 +158,7 @@ public final class TarefasJF extends javax.swing.JFrame {
 
             carregarListas();
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Selecione uma tarefa para editar!!");
+            JOptionPane.showMessageDialog(rootPane, "Selecione uma tarefa para editar!");
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 

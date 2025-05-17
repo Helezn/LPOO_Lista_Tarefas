@@ -76,6 +76,6 @@ public class Lista {
     }
     
     public String toString() {
-    return "Tarefa: " + tarefa + " | Categoria: " + categoria;
+    return "Tarefa: " + tarefa + " | Categoria: " + categoria + " | Prioridade: " + prioridade;
 }
 }

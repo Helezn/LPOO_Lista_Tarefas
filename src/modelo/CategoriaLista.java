@@ -9,5 +9,5 @@ package modelo;
  * @author vanessalagomachado
  */
 public enum CategoriaLista {
-    IFSUL, PESSOAL, TRABALHO;
+    ESTUDO, PESSOAL, TRABALHO;
 }
